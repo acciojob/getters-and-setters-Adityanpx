@@ -1,39 +1,44 @@
 //complete this code
 class Person {
-	constructor(name , age){
-		this.name = name;
-		this.age = age;
+	constructor(name, age) {
+		this._name = name;
+		this._age = age;
 	}
 
-	getName(){
-		return this.name;
+	// Getter for name
+	get name() {
+		return this._name;
 	}
 
-	getAge() {
-		return this.age;
-		
+	// Setter for name
+	set name(newName) {
+		this._name = newName;
 	}
 
-	setName(newAge){
+	// Getter for age
+	get age() {
+		return this._age;
+	}
+
+	// Setter for age
+	set age(newAge) {
 		if (newAge > 0) {
-			this.name = newAge;
-			
-		}else {
+			this._age = newAge;
+		} else {
 			console.log("Age must be a positive number");
 		}
 	}
-	
 }
 
 class Student extends Person {
-	study(){
-		console.log(`${this.name} is studying`)
+	study() {
+		console.log(`${this.name} is studying`);
 	}
 }
 
 class Teacher extends Person {
 	teach() {
-		console.log(`${this.name} is teaching`)
+		console.log(`${this.name} is teaching`);
 	}
 }
 
